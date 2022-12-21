@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./Assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./Assets/CSS/all.css">
+  <link rel="stylesheet" href="./Assets/CSS/style.css">
+  <title>Frontend Mentor | Calculator app</title>
+
+</head>
+<body class="theme-one">
+  <div class="mainContainer">
+    <header class="header theme-one">
+      <h1>calc</h1>
+      <div class="themes">
+        <p class="lead">theme</p>
+        <label for="" class="switchTheme">
+          <div class="theme-num">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+          </div>
+          <input class="theme-one" type="range" value="1" max="3" min="1">
+        </label>
+      </div>
+    </header>
+    <main class="content theme-one">
+      <section class="result">
+        <input type="text" name="text" id="display" placeholder="399,981" disabled>
+      </section>
+      <div class="buttons">
+        <div class="button" onclick="calculate(7)">7</div>
+        <div class="button" onclick="calculate(8)">8</div>
+        <div class="button" onclick="calculate(9)">9</div>
+        <div class="button del" onclick="del()">DEL</div>
+        <div class="button" onclick="calculate(4)">4</div>
+        <div class="button" onclick="calculate(5)">5</div>
+        <div class="button" onclick="calculate(6)">6</div>
+        <div class="button" onclick="calculate('+')">+</div>
+        <div class="button" onclick="calculate(1)">1</div>
+        <div class="button" onclick="calculate(2)">2</div>
+        <div class="button" onclick="calculate(3)">3</div>
+        <div class="button" onclick="calculate('-')">-</div>
+        <div class="button" onclick="calculate('.')">.</div>
+        <div class="button" onclick="calculate(0)">0</div>
+        <div class="button" onclick="calculate('/')">/</div>
+        <div class="button" onclick="calculate('*')">x</div>
+        <div class="button reset" onclick="clr()">RESET</div>
+        <div id="equal" class="button equal" onclick="resultCal()">=</div>
+      </div>
+    </main>
+  
+  </div>  
+  <footer class="theme-one">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Cletus Samuel</a>.
+    </div>
+  </footer>
+  <script src="./Assets/App/app.js"></script>
+</body>
+</html>

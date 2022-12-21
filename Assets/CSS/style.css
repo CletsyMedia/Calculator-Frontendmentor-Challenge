@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*## Colors*/
+
+    /*### Theme 1
+    #### Backgrounds*/
+    --Very-dark-desaturated-blue-1 /*(main background)*/: hsl(222, 26%, 31%);
+    --Very-dark-desaturated-blue-2 /*(toggle background, keypad background)*/: hsl(223, 31%, 20%);
+    --Very-dark-desaturated-blue-3 /*(screen background)*/: hsl(224, 36%, 15%);
+    /*#### Keys*/
+    --Desaturated-dark-blue-1 /*(key background)*/: hsl(225, 21%, 49%);
+    --Desaturated-dark-blue-2 /*(key shadow)*/: hsl(224, 28%, 35%);
+    --Red /*(key background, toggle)*/: hsl(6, 63%, 50%);
+    --Dark-red /*(key shadow)*/: hsl(6, 70%, 34%);
+    --Light-grayish-orange /*(key background)*/: hsl(30, 25%, 89%);
+    --Grayish-orange /*(key shadow)*/: hsl(28, 16%, 65%);
+    /*#### Text*/
+    --Very-dark-grayish-blue: hsl(221, 14%, 31%);
+    --White: hsl(0, 0%, 100%);
+
+    /*### Theme 2
+    #### Backgrounds*/
+    --Light-gray /*(main background)*/: hsl(0, 0%, 90%);
+    --Grayish-red /*(toggle background, keypad background)*/: hsl(0, 5%, 81%);
+    --Very-light-gray /*(screen background)*/: hsl(0, 0%, 93%);
+    /*#### Keys*/
+    --Dark-moderate-cyan /*(key background)*/: hsl(185, 42%, 37%);
+    --Very-dark-cyan /*(key shadow)*/: hsl(185, 58%, 25%);
+    --Orange /*(key background, toggle)*/: hsl(25, 98%, 40%);
+    --Dark-orange /*(key shadow)*/: hsl(25, 99%, 27%);
+    --Light-grayish-yellow /*(key background)*/: hsl(45, 7%, 89%);
+    --Dark-grayish-orange /*(key shadow)*/: hsl(35, 11%, 61%);
+    /*#### Text*/
+    --Very-dark-grayish-yellow: hsl(60, 10%, 19%);
+    --White /*(text)*/: hsl(0, 0%, 100%);
+
+    /*### Theme 3
+    #### Backgrounds*/
+    --Very-dark-violet-1 /*(main background)*/: hsl(268, 75%, 9%);
+    --Very-dark-violet-2 /*(toggle background, keypad background, screen background)*/: hsl(268, 71%, 12%);
+    /*#### Keys*/
+    --Dark-violet /*(key background)*/: hsl(281, 89%, 26%);
+    --Vivid-magenta /*(key shadow)*/: hsl(285, 91%, 52%);
+    --Pure-cyan /*(key background, toggle)*/: hsl(176, 100%, 44%);
+    --Soft-cyan /*(key shadow)*/: hsl(177, 92%, 70%);
+    --Very-dark-violet /*(key background)*/: hsl(268, 47%, 21%);
+    --Dark-magenta /*(key shadow)*/: hsl(290, 70%, 36%);
+    /*#### Text*/
+    --Light-yellow: hsl(52, 100%, 62%);
+    --Very-dark-blue: hsl(198, 20%, 13%);
+    --White /*(text)*/: hsl(0, 0%, 100%);
+}
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    
+}
+body.theme-one{
+    background-color: var(--Very-dark-desaturated-blue-1);
+}
+.mainContainer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    user-select: none;
+}
+.header{
+    width:30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0.5rem;
+}
+.header.theme-one{
+    color: white;
+}
+.header .themes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.header .themes .switchTheme{
+    display: flex;
+    flex-direction: column;
+}
+.header .themes .switchTheme .theme-num{
+    display: flex;
+    justify-content: space-around;
+    width: 4rem;
+    font-size: 0.7rem;
+    margin-bottom: 0.2rem;
+}
+.header .themes .switchTheme input{
+    width: 4rem;
+    appearance: none;
+    border-radius: 1rem;
+    padding: .2rem .2rem;
+    cursor: pointer;
+}
+.header.theme-one .themes .switchTheme input {
+    background-color: var(--Very-dark-desaturated-blue-2);
+}
+.header .themes .switchTheme input::-webkit-slider-thumb {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+}
+.header.theme-one .themes .switchTheme input::-webkit-slider-thumb {
+    background-color: var(--Red);
+}
+.header .themes .lead{
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    margin: 1rem .3rem .5rem 0;
+}
+
+/* Content */
+.content{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+.content .result{
+    width: 100%;
+}
+.content .result input{
+    width: 100%;
+    text-align:right;
+    padding:1rem;
+    text-align: right;
+    border-radius: .5rem;
+    font-size:2rem;
+    outline: none;
+    border: none;
+}
+.content.theme-one .result input{
+    background-color: var(--Very-dark-desaturated-blue-3);
+    color:white;
+}
+.content{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+}
+.content .buttons{
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 2rem;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, auto);
+    gap: 1rem;
+    border-radius: .5rem;
+
+}
+.content.content.theme-one .buttons{
+    background-color: var(--Very-dark-desaturated-blue-2);
+}
+
+.content .buttons .button{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:3px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.content .buttons .button:hover{
+    transform: scale(1.04);
+}
+.content.theme-one .buttons .button {
+    color: var(--Very-dark-grayish-blue);
+    background-color: var(--Light-grayish-orange);
+    box-shadow: 0 .2rem .1rem var(--Grayish-orange);
+}
+.content .buttons .button.del,
+.content .buttons .button.reset{
+    font-size: 1.3rem;
+    color: var(--White);
+    background-color: var(--Desaturated-dark-blue-1);
+    box-shadow: 0 .2rem .1rem var(--Desaturated-dark-blue-2);
+}
+.content .buttons .button.reset{
+    /* grid-column:1 / span 2; */
+    grid-area: 5 / 1 / 6 / span 2;
+}
+.content .buttons .button.equal{
+    /* grid-column:1 / span 2; */
+    grid-area: 5 / 3 / 6 / span 2;
+
+}
+.content.theme-one .buttons .button.equal{
+    color: var(--White);
+    background-color: var(--Red);
+    box-shadow: 0 .2rem .1rem var(--Dark-red);
+}
+
+/*theme-two*/
+body.theme-two {
+    background-color: var(--Light-gray);
+}
+
+.header.theme-two {
+    color: var(--Very-dark-grayish-yellow);
+}
+
+.header.theme-two .themes .switchTheme input {
+    background-color: var(--Grayish-red);
+}
+
+.header.theme-two .themes .switchTheme input::-webkit-slider-thumb{
+    background-color: var(--Orange);
+}
+
+.content.theme-two input {
+    background-color: var(--Very-light-gray);
+    color: var(--Very-dark-grayish-yellow);
+}
+
+.content.theme-two .buttons {
+    background-color: var(--Grayish-red);
+}
+
+.content.theme-two .buttons .button.del,
+.content.theme-two .buttons .button.reset {
+    color: var(--White);
+    background-color: var(--Dark-moderate-cyan);
+    box-shadow: 0 .2rem .1rem var(--Very-dark-cyan);
+}
+
+.content.theme-two .buttons .button.equal {
+    color: var(--White);
+    background-color: var(--Orange);
+    box-shadow: var(--Dark-orange);
+}
+
+.content.theme-two .buttons .button {
+    color: var(--Very-dark-grayish-yellow);
+    background-color: var(--Light-grayish-yellow);
+    box-shadow: 0 .2rem .1rem var(--Dark-grayish-orange);
+}
+
+/*theme-three*/
+body.theme-three {
+    background-color: var(--Very-dark-violet-1);
+}
+
+.header.theme-three {
+    color: var(--Light-yellow);
+}
+
+.header.theme-three .themes .switchTheme input {
+    background-color: var(--Very-dark-violet-2);
+}
+
+.header.theme-three .themes .switchTheme input::-webkit-slider-thumb {
+    background-color: var(--Pure-cyan);
+}
+
+.content.theme-three input{
+    background-color: var(--Very-dark-violet-2);
+    color: var(--Light-yellow);
+}
+
+.content.theme-three .buttons {
+    background-color: var(--Very-dark-violet-2);
+}
+
+.content.theme-three .buttons .button {
+    color: var(--Light-yellow);
+    background-color: var(--Very-dark-violet);
+    box-shadow: 0 .2rem .1rem var(--Dark-magenta);
+}
+
+.content.theme-three .buttons .button.del,
+.content.theme-three .buttons .button.reset {
+    color: var(--White);
+    background-color: var(--Dark-violet);
+    box-shadow: 0 .2rem .1rem var(--Vivid-magenta);
+}
+
+.content.theme-three .buttons .button.equal {
+    color: var(--Very-dark-blue);
+    background-color: var(--Pure-cyan);
+    box-shadow: var(--Soft-cyan);
+}
+
+
+
+footer{
+    text-align: center;
+    padding: 1rem 0;
+}
+
+
+@media only screen and (max-width:768px){
+    .content,
+    .header{
+        width:50%;
+    }
+}
+@media only screen and (max-width:426px){
+    .content,
+    .header{
+        width:90%;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
